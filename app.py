@@ -9,8 +9,7 @@ model = pickle.load(open("model/model_rf_clf_rev.pkl", "rb"))
 
 @flask_app.route("/")
 def Home():
-    return render_template("index.html")
-
+    return render_template("home.html")
 
 @flask_app.route("/predict", methods=["POST"])
 def predict():
@@ -21,9 +20,19 @@ def predict():
     output = {0: "No", 1: "Yes"}
 
     return render_template(
-        "index.html",
-        prediction_text="Do you want to subscribe.? {}".format(
+        "predict.html",
+        prediction_text="{}".format(
             output[prediction[0]]))
+
+
+@flask_app.route('/data-set')
+def dataSet():
+    return render_template('bank_dataset_filt.html')
+
+
+@flask_app.route('/predict')
+def predicts():
+    return render_template('predict.html')
 
 
 if __name__ == "__main__":
