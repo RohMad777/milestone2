@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+  <title>Prediction Subcribe Deposit Bank</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+ <div class="form">
+	<h1>Deposit Bank</h1>
+    <form action="{{ url_for('predict')}}"method="post">
+      <label for="age">Age:  </label>
+      <input type="number" name="age" placeholder="Age" required="required" />
+
+      <label for="job">Job:  </label>
+      <select id="job" name="job", placeholder="Job", required="required">
+        <option value="0">Admin</option>
+        <option value="1">Entrepreneur</option>
+        <option value="2">Management</option>
+        <option value="3">Retired</option>
+        <option value="4">Technician</option>
+      </select>
+
+      <label for="marital">Marital:  </label>
+      <select id="marital" name="marital", placeholder="Marital", required="required">
+        <option value="0">Divorced</option>
+        <option value="1">Married</option>
+        <option value="2">Single</option>
+        <option value="3">Unknown</option>
+      </select>
+
+      <label for="education">Education:  </label>
+      <select id="education" name="education", placeholder="Education", required="required">
+        <option value="0">High School</option>
+        <option value="1">Professional Course</option>
+        <option value="2">University Degree</option>
+      </select>
+
+      <label for="housing">Housing:  </label>
+      <select id="housing" name="housing", placeholder="Job", required="required">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+        <option value="2">Unknown</option>
+      </select>
+
+      <label for="pcoutcome">Poutcome:  </label>
+      <input type="number" name="poutcome" placeholder="Poutcome" required="required" />
+
+      <label for="loan">Loan:  </label>
+      <select id="loan" name="loan", placeholder="Loan", required="required">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+        <option value="2">Unknown</option>
+      </select>
+
+      <label for="duration">Duration:  </label>
+      <input type="number" name="duration" placeholder="Duration" required="required" />
+
+      <label for="previous">Previous:  </label>
+      <input type="number" name="previous" placeholder="Previous" required="required" />
+
+      <label for="cons_conf_idx">Cons Conf Idx:  </label>
+      <input type="number" name="cons_conf_idx" placeholder="Cons Conf Idx" required="required" />
+
+      
+
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   <p class="message">{{prediction_text}}</p>
+
+ </div>
+
+
+</body>
+</html>
