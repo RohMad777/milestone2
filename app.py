@@ -27,7 +27,7 @@ def predict():
 
 @app.route('/data-set')
 def dataSet():
-    return render_template('bank_dataset_filt.html')
+    return render_template('bank_dataset.html')
 
 
 @app.route('/predict')

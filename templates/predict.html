@@ -11,34 +11,63 @@
     </div>
     <div class="container">
         <!-- Example row of columns -->
-        <div class="row justify-content-ceter">
+        <div class="row justify-content-center">
             <div class="col-md-12">
-                <table class="table">
+                <table class="table table-center">
                     <thead>
                       <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col">No</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Job</th>
+                        <th scope="col">Education</th>
+                        <th scope="col">Marital</th>
+                        <th scope="col">Housing</th>
+                        <th scope="col">Poutcome</th>
+                        <th scope="col">Loan</th>
+                        <th scope="col">Duration</th>
+                        <th scope="col">Previous</th>
+                        <th scope="col">Cons Conf Idx</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        <td>57</td>
+                        <td>Services</td>
+                        <td>Married</td>
+                        <td>HighSchool</td>
+                        <td>No</td>
+                        <td>Failure</td>
+                        <td>No</td>
+                        <td>149</td>
+                        <td>0</td>
+                        <td>-36.4</td>
                       </tr>
                       <tr>
                         <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
+                        <td>37</td>
+                        <td>Services</td>
+                        <td>Married</td>
+                        <td>HighSchool</td>
+                        <td>Yes</td>
+                        <td>Failure</td>
+                        <td>No</td>
+                        <td>226</td>
+                        <td>0</td>
+                        <td>-36.4</td>
                       </tr>
                       <tr>
                         <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
+                        <td>49</td>
+                        <td>Entrepreneur</td>
+                        <td>Married</td>
+                        <td>University Degree</td>
+                        <td>Unknown</td>
+                        <td>Nonexistent</td>
+                        <td>No</td>
+                        <td>1616</td>
+                        <td>0</td>
+                        <td>-36.4</td>
                       </tr>
                     </tbody>
                   </table>
@@ -54,17 +83,24 @@
                 
                       <label for="job" class="form-label">Job</label>
                       <select id="job" name="job" class="form-select" placeholder="Job" required="required">
-                        <option value="-">--Select Job--</option>
+                        <option value="">--Select Job--</option>
                         <option value="0">Admin</option>
-                        <option value="1">Entrepreneur</option>
-                        <option value="2">Management</option>
-                        <option value="3">Retired</option>
-                        <option value="4">Technician</option>
+                        <option value="1">Blue Collar</option>
+                        <option value="2">Entrepreneur</option>
+                        <option value="3">Housemaid</option>
+                        <option value="4">Management</option>
+                        <option value="5">Retired</option>
+                        <option value="6">Self Employed</option>
+                        <option value="7">Services</option>
+                        <option value="8">Student</option>
+                        <option value="9">Technician</option>
+                        <option value="10">Unemployed</option>
+                        <option value="11">Unknown</option>
                       </select>
                 
                       <label for="marital" class="form-label">Marital</label>
                       <select id="marital" class="form-select" name="marital" placeholder="Marital" required="required">
-                        <option value="-">--Select Marital--</option>
+                        <option value="">--Select Marital--</option>
                         <option value="0">Divorced</option>
                         <option value="1">Married</option>
                         <option value="2">Single</option>
@@ -73,26 +109,31 @@
                 
                       <label for="education" class="form-label">Education</label>
                       <select id="education" class="form-select" name="education" placeholder="Education" required="required">
-                        <option value="-">--Select Education--</option>
-                        <option value="0">High School</option>
+                        <option value="">--Select Education--</option>
+                        <option value="0">Highschool</option>
                         <option value="1">Professional Course</option>
                         <option value="2">University Degree</option>
                       </select>
                 
                       <label for="housing" class="form-label">Housing</label>
-                      <select id="housing" class="form-select" name="housing" placeholder="Job" required="required">
-                        <option value="-">--Select Housing--</option>
+                      <select id="housing" class="form-select" name="housing" placeholder="Housing" required="required">
+                        <option value="">--Select Housing--</option>
                         <option value="0">No</option>
                         <option value="1">Yes</option>
                         <option value="2">Unknown</option>
                       </select>
                 
                       <label for="poutcome" class="form-label">Poutcome</label>
-                      <input type="number" class="form-select" name="poutcome" placeholder="Poutcome" required="required" />
+                      <select id="poutcome" class="form-select" name="poutcome" placeholder="Poutcome" required="required">
+                        <option value="">--Select Poutcome--</option>
+                        <option value="0">Nonexistent</option>
+                        <option value="1">Failure</option>
+                        <option value="2">Success</option>
+                      </select>
                 
                       <label for="loan" class="form-label">Loan</label>
                       <select id="loan" class="form-select" name="loan", placeholder="Loan", required="required">
-                        <option value="-">--Select Loan--</option>
+                        <option value="">--Select Loan--</option>
                         <option value="0">No</option>
                         <option value="1">Yes</option>
                         <option value="2">Unknown</option>
