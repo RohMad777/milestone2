@@ -12,7 +12,7 @@
     <div class="container">
         <!-- Example row of columns -->
         <div class="row justify-content-center">
-            <div class="col-md-12">
+            <div class="col-md-12 table-responsive">
                 <table class="table table-center">
                     <thead>
                       <tr>
@@ -80,7 +80,6 @@
                     <form action="{{ url_for('predict')}}"method="post">
                         <label for="age" class="form-label">Age</label>
                       <input type="number" class="form-control" name="age" placeholder="Age" required="required" />
-                
                       <label for="job" class="form-label">Job</label>
                       <select id="job" name="job" class="form-select" placeholder="Job" required="required">
                         <option value="">--Select Job--</option>
@@ -147,9 +146,12 @@
                 
                       <label for="const" class="form-label">Cons Conft Idx</label>
                       <input type="number" class="form-control"  name="cons_conf_idx" placeholder="Cons Conf Idx" required="required" />
-                
-                      
-                      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+                      <br/>
+                       
+                        <div class="d-grid gap-2">
+                          <button type="submit" class="btn btn-primary btn-block btn-lg">Predict</button>
+                        </div>
+                        <br/>
                     </form>
                 
                    <p class="alert alert-primary text-center fs-5 fw-bold" role="alert">Result Predict: {{prediction_text}}</p>
