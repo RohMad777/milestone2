@@ -11,18 +11,17 @@ model = pickle.load(open("model/model_rf_clf_rev.pkl", "rb"))
 def Home():
     return render_template("home.html")
 
+
 @app.route("/predict", methods=["POST"])
 def predict():
     float_features = [float(x) for x in request.form.values()]
     features = [np.array(float_features)]
     prediction = model.predict(features)
 
-    output = {0: "No", 1: "Yes"}
+    output = {0: "No Deposit", 1: "Yes Deposit"}
 
-    return render_template(
-        "predict.html",
-        prediction_text="{}".format(
-            output[prediction[0]]))
+    return render_template("predict.html",
+                           prediction_text="{}".format(output[prediction[0]]))
 
 
 @app.route('/data-set')
