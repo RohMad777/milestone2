@@ -1,4 +1,4 @@
-{% extends 'layout.html' %} {% block title %} Home {% endblock %} {% block body
+{% extends 'layout.html' %} {% block title %} Prediction {% endblock %} {% block body
     %}
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="container">
@@ -13,7 +13,7 @@
         <!-- Example row of columns -->
         <div class="row justify-content-center">
             <div class="col-md-12 table-responsive">
-                <table class="table table-center">
+                <table class="table table-center table-striped">
                     <thead>
                       <tr>
                         <th scope="col">No</th>
@@ -73,14 +73,17 @@
                   </table>
             </div>
         </div>
+<hr/>
+<h3 class="text-center">Input Feature</h3>
+          <form action="{{ url_for('predict')}}"method="post">
         <div class="row">
-            <div class="col-md-12">
-                <div class="form-control">
-                    <h1>Input Feature</h1>
-                    <form action="{{ url_for('predict')}}"method="post">
-                        <label for="age" class="form-label">Age</label>
-                      <input type="number" class="form-control" name="age" placeholder="Age" required="required" />
-                      <label for="job" class="form-label">Job</label>
+          
+          <div class="col-md-6">
+            <label for="age" class="form-label">Age</label>
+            <input type="number" class="form-control" name="age" placeholder="Age" required="required" />
+          </div>
+          <div class="col-md-6">
+            <label for="job" class="form-label">Job</label>
                       <select id="job" name="job" class="form-select" placeholder="Job" required="required">
                         <option value="">--Select Job--</option>
                         <option value="0">Admin</option>
@@ -96,8 +99,9 @@
                         <option value="10">Unemployed</option>
                         <option value="11">Unknown</option>
                       </select>
-                
-                      <label for="marital" class="form-label">Marital</label>
+          </div>
+          <div class="col-md-6">
+            <label for="marital" class="form-label">Marital</label>
                       <select id="marital" class="form-select" name="marital" placeholder="Marital" required="required">
                         <option value="">--Select Marital--</option>
                         <option value="0">Divorced</option>
@@ -105,59 +109,81 @@
                         <option value="2">Single</option>
                         <option value="3">Unknown</option>
                       </select>
-                
-                      <label for="education" class="form-label">Education</label>
+          </div>
+          <div class="col-md-6">
+            <label for="education" class="form-label">Education</label>
                       <select id="education" class="form-select" name="education" placeholder="Education" required="required">
                         <option value="">--Select Education--</option>
                         <option value="0">Highschool</option>
                         <option value="1">Professional Course</option>
                         <option value="2">University Degree</option>
                       </select>
-                
-                      <label for="housing" class="form-label">Housing</label>
-                      <select id="housing" class="form-select" name="housing" placeholder="Housing" required="required">
-                        <option value="">--Select Housing--</option>
-                        <option value="0">No</option>
-                        <option value="1">Yes</option>
-                        <option value="2">Unknown</option>
-                      </select>
-                
-                      <label for="poutcome" class="form-label">Poutcome</label>
-                      <select id="poutcome" class="form-select" name="poutcome" placeholder="Poutcome" required="required">
-                        <option value="">--Select Poutcome--</option>
-                        <option value="0">Nonexistent</option>
-                        <option value="1">Failure</option>
-                        <option value="2">Success</option>
-                      </select>
-                
-                      <label for="loan" class="form-label">Loan</label>
+          </div>
+
+          <div class="col-md-6">
+            <label for="housing" class="form-label">Housing</label>
+            <select id="housing" class="form-select" name="housing" placeholder="Housing" required="required">
+              <option value="">--Select Housing--</option>
+              <option value="0">No</option>
+              <option value="1">Yes</option>
+              <option value="2">Unknown</option>
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <label for="poutcome" class="form-label">Poutcome</label>
+            <select id="poutcome" class="form-select" name="poutcome" placeholder="Poutcome" required="required">
+              <option value="">--Select Poutcome--</option>
+              <option value="0">Nonexistent</option>
+              <option value="1">Failure</option>
+              <option value="2">Success</option>
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <label for="loan" class="form-label">Loan</label>
                       <select id="loan" class="form-select" name="loan", placeholder="Loan", required="required">
                         <option value="">--Select Loan--</option>
                         <option value="0">No</option>
                         <option value="1">Yes</option>
                         <option value="2">Unknown</option>
                       </select>
-                
-                      <label for="duration" class="form-label">Duration</label>
-                      <input type="number" class="form-control"  name="duration" placeholder="Duration" required="required" />
-                
-                      <label for="previous" class="form-label">Previous</label>
+          </div>
+
+          <div class="col-md-6">
+            <label for="duration" class="form-label">Duration</label>
+            <input type="number" class="form-control"  name="duration" placeholder="Duration" required="required" />
+          </div>
+
+          <div class="col-md-6">
+            <label for="previous" class="form-label">Previous</label>
                       <input type="number" class="form-control"  name="previous" placeholder="Previous" required="required" />
-                
-                      <label for="const" class="form-label">Cons Conft Idx</label>
-                      <input type="number" class="form-control"  name="cons_conf_idx" placeholder="Cons Conf Idx" required="required" />
-                      <br/>
-                       
-                        <div class="d-grid gap-2">
-                          <button type="submit" class="btn btn-primary btn-block btn-lg">Predict</button>
-                        </div>
-                        <br/>
-                    </form>
-                
-                   <p class="alert alert-primary text-center fs-5 fw-bold" role="alert">Result Predict: {{prediction_text}}</p>
-                
-                 </div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label for="const" class="form-label">Cons Conft Idx</label>
+            <input type="number" class="form-control"  name="cons_conf_idx" placeholder="Cons Conf Idx" required="required" />
+          </div>
+
+          <div class="col-md-12 mb-4">
+            <div class="d-grid gap-2 col-6 mx-auto">
+              <button type="submit" class="btn btn-primary btn-block btn-lg">Prediction</button>
             </div>
+          </div>
+        </form>
+
+        <div class="col-md-12 mb-4 text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+          <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+          </symbol>
+        </svg>
+        <div class="alert alert-primary d-flex align-items-center text-center" role="alert">
+          <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>
+          <div class="fw-bold">
+            Result Predict: {{prediction_text}}
+          </div>
+        </div>
         </div>
     </div>
     {% endblock %}
